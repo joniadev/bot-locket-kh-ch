@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocketGold Admin Dashboard - Xuân Hậu Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f5f9;
+            --border-card: #e2e8f0;
+            --border-glow: rgba(99, 102, 241, 0.25);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --accent-gold: #d97706;
+            --accent-green: #10b981;
+            --accent-blue: #2563eb;
+            --accent-purple: #7c3aed;
+            --accent-red: #f43f5e;
+            --accent-cyan: #0284c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.06) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.06) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.06) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 32px 24px;
+        }
+
+        /* LOGIN SCREEN OVERLAY */
+        #login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(248, 250, 252, 0.92);
+            backdrop-filter: blur(16px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .login-card {
+            background: #ffffff;
+            border: 1px solid var(--border-card);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+        }
+
+        .login-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #7c3aed, #2563eb);
+            color: #fff;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        .login-card h2 {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .login-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .login-input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .login-input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: #f8fafc;
+            border: 1px solid var(--border-card);
+            border-radius: 12px;
+            font-size: 15px;
+            color: var(--text-main);
+            outline: none;
+            transition: all 0.25s ease;
+        }
+
+        .login-input:focus {
+            border-color: var(--accent-purple);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #7c3aed, #2563eb);
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+        }
+
+        .btn-login:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+
+        .login-error {
+            margin-top: 14px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-red);
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1380px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-card);
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.25);
+        }
+
+        .logo-title h1 {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+
+        .logo-title p {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 3px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .live-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent-green);
+            padding: 10px 18px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 700;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+
+        .pulse-dot {
+            width: 9px;
+            height: 9px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-green);
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .btn-refresh {
+            background: #ffffff;
+            border: 1px solid var(--border-card);
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-refresh:hover {
+            border-color: var(--accent-purple);
+            color: var(--accent-purple);
+            transform: translateY(-1px);
+        }
+
+        .btn-logout {
+            background: #fff1f2;
+            border: 1px solid #fecdd3;
+            color: var(--accent-red);
+            padding: 10px 18px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .btn-logout:hover {
+            background: #ffe4e6;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 28px;
+            border-bottom: 1px solid var(--border-card);
+            padding-bottom: 14px;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-muted);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn.active {
+            background: var(--accent-purple);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: rgba(0, 0, 0, 0.04);
+            color: var(--text-main);
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .stat-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+
+        .stat-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .icon-revenue { background: rgba(217, 119, 6, 0.1); color: var(--accent-gold); }
+        .icon-users { background: rgba(124, 58, 237, 0.1); color: var(--accent-purple); }
+        .icon-success { background: rgba(16, 185, 129, 0.1); color: var(--accent-green); }
+        .icon-fail { background: rgba(244, 63, 94, 0.1); color: var(--accent-red); }
+
+        .stat-value {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .stat-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-sub {
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 11px;
+        }
+
+        .badge-green { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+        .badge-purple { background: rgba(124, 58, 237, 0.15); color: var(--accent-purple); }
+
+        /* Revenue Breakdowns */
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .revenue-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .rev-detail-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .rev-detail-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .rev-detail-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 14px;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 6px;
+        }
+
+        .fill-green { background: linear-gradient(90deg, #10b981, #059669); }
+        .fill-purple { background: linear-gradient(90deg, #7c3aed, #4f46e5); }
+
+        .search-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-card);
+            border-radius: 12px;
+            padding: 10px 16px;
+            color: var(--text-main);
+            font-size: 13px;
+            font-weight: 500;
+            width: 280px;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+
+        .search-box:focus {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+            background: #ffffff;
+        }
+
+        /* Tables */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid var(--border-card);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        th {
+            background: #f1f5f9;
+            color: var(--text-muted);
+            font-weight: 700;
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border-card);
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.8px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #f1f5f9;
+            color: var(--text-main);
+            font-weight: 500;
+            background: #ffffff;
+        }
+
+        tr:hover td {
+            background: #f8fafc;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 11px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+
+        .status-approved { background: rgba(16, 185, 129, 0.12); color: var(--accent-green); border: 1px solid rgba(16, 185, 129, 0.3); }
+        .status-pending { background: rgba(245, 158, 11, 0.12); color: var(--accent-gold); border: 1px solid rgba(245, 158, 11, 0.3); }
+        .status-failed { background: rgba(244, 63, 94, 0.12); color: var(--accent-red); border: 1px solid rgba(244, 63, 94, 0.3); }
+
+        .tag-vip {
+            background: rgba(217, 119, 6, 0.12);
+            color: var(--accent-gold);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 11px;
+        }
+
+        .tag-free {
+            background: #f1f5f9;
+            color: var(--text-muted);
+            border: 1px solid var(--border-card);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        code {
+            font-family: 'Be Vietnam Pro', monospace;
+            background: #f1f5f9;
+            padding: 3px 8px;
+            border-radius: 6px;
+            color: var(--accent-purple);
+            border: 1px solid #e2e8f0;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN SCREEN OVERLAY -->
+    <div id="login-overlay">
+        <div class="login-card">
+            <div class="login-icon">👑</div>
+            <h2>XUÂN HẬU MEDIA</h2>
+            <p>Nhập mật khẩu để truy cập LocketGold Admin Dashboard</p>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="login-input-group">
+                    <label>Mật Khẩu Quản Trị</label>
+                    <input type="password" id="login-pass" class="login-input" placeholder="Nhập mật khẩu..." autofocus>
+                </div>
+                <button type="submit" class="btn-login">🔓 Đăng Nhập Quản Trị</button>
+            </form>
+            <div id="login-error" class="login-error"></div>
+        </div>
+    </div>
+
+    <!-- MAIN DASHBOARD -->
+    <div class="container" id="dashboard-main" style="display: none;">
+        <!-- Header -->
+        <header>
+            <div class="logo-area">
+                <div class="logo-icon">👑</div>
+                <div class="logo-title">
+                    <h1>LocketGold Admin Dashboard</h1>
+                    <p>Xuân Hậu Media - Báo Cáo Doanh Thu & Quản Lý Dữ Liệu Tự Động 24/7</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="live-badge">
+                    <div class="pulse-dot"></div>
+                    <span>Hệ Thống Live</span>
+                </div>
+                <button class="btn-refresh" onclick="loadDashboardData()">
+                    <span>🔄 Cập Nhật Dữ Liệu</span>
+                </button>
+                <button class="btn-logout" onclick="handleLogout()">
+                    <span>🚪 Đăng Xuất</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Cards Grid -->
+        <div class="stats-grid">
+            <div class="stat-card card-revenue">
+                <div class="stat-header">
+                    <span class="stat-title">TỔNG DOANH THU</span>
+                    <div class="stat-icon icon-revenue">💰</div>
+                </div>
+                <div class="stat-value" id="val-total-revenue">0</div>
+                <div class="stat-subtitle">
+                    <span class="badge-sub badge-green" id="val-approved-count">0 Đơn</span>
+                    <span>Đã thu qua PayOS / Bank</span>
+                </div>
+            </div>
+
+            <div class="stat-card card-users">
+                <div class="stat-header">
+                    <span class="stat-title">NGƯỜI DÙNG BOT</span>
+                    <div class="stat-icon icon-users">👥</div>
+                </div>
+                <div class="stat-value" id="val-total-users">0 Users</div>
+                <div class="stat-subtitle">
+                    <span class="badge-sub badge-purple" id="val-vip-count">0 VIP Active</span>
+                    <span>Thành viên VIP</span>
+                </div>
+            </div>
+
+            <div class="stat-card card-success">
+                <div class="stat-header">
+                    <span class="stat-title">NÂNG GOLD THÀNH CÔNG</span>
+                    <div class="stat-icon icon-success">⚡</div>
+                </div>
+                <div class="stat-value" id="val-success-req">0 Lượt</div>
+                <div class="stat-subtitle">
+                    <span class="badge-sub badge-green" id="val-success-rate">100% Tỷ Lệ</span>
+                    <span>Bypass RevenueCat</span>
+                </div>
+            </div>
+
+            <div class="stat-card card-fail">
+                <div class="stat-header">
+                    <span class="stat-title">CỘNG TÁC VIÊN (CTV)</span>
+                    <div class="stat-icon" style="background: rgba(124, 58, 237, 0.1); color: var(--accent-purple);">⭐</div>
+                </div>
+                <div class="stat-value" id="val-ctv-count" style="color: var(--accent-purple);">0 CTV</div>
+                <div class="stat-subtitle">
+                    <span class="badge-sub badge-purple">Nâng Không Giới Hạn</span>
+                    <span>Tự động .env & 29 ngày</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('tab-overview', this)">
+                📊 Tổng Quan Doanh Thu
+            </button>
+            <button class="tab-btn" onclick="switchTab('tab-transactions', this)">
+                📑 Lịch Sử Giao Dịch
+            </button>
+            <button class="tab-btn" onclick="switchTab('tab-users', this)">
+                👥 Quản Lý Người Dùng
+            </button>
+            <button class="tab-btn" onclick="switchTab('tab-ctv', this)">
+                ⭐ Quản Lý CTV
+            </button>
+        </div>
+
+        <!-- TAB 1: OVERVIEW -->
+        <div id="tab-overview" class="tab-content">
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span>💵 Chi Tiết Phân Phối Doanh Thu Gói VIP 1 Năm</span>
+                    </div>
+                </div>
+
+                <div class="revenue-breakdown" style="grid-template-columns: 1fr;">
+                    <div class="rev-detail-card">
+                        <div class="rev-detail-title">
+                            <span>👑 Gói VIP 1 Năm (79.000đ) — Doanh Thu Đã Duyệt</span>
+                            <strong id="rev-single-count" style="color: var(--accent-green);">0 đơn</strong>
+                        </div>
+                        <div class="rev-detail-value" id="rev-single-val" style="color: var(--accent-green);">0 VNĐ</div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill fill-green" id="bar-single" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOP CUSTOMERS RANKING TABLE -->
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span>🏆 Top Khách Hàng / CTV Nâng Gold Nhiều Nhất</span>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Thứ Hạng</th>
+                                <th>Telegram User ID</th>
+                                <th>Vai Trò / Trạng Thái</th>
+                                <th>Tổng Lượt Nâng Gold Thành Công</th>
+                            </tr>
+                        </thead>
+                        <tbody id="top-users-table-body">
+                            <tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Đang tải dữ liệu Top Khách Hàng...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: TRANSACTIONS HISTORY -->
+        <div id="tab-transactions" class="tab-content" style="display: none;">
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span>📑 Lịch Sử Đơn Nạp Tiền & Thanh Toán</span>
+                    </div>
+                    <input type="text" class="search-box" id="search-tx" placeholder="🔍 Tìm Order ID, User ID, Username..." onkeyup="filterTransactions()">
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã Đơn (Order ID)</th>
+                                <th>Telegram User ID</th>
+                                <th>Username Acc Locket</th>
+                                <th>Gói Nạp</th>
+                                <th>Số Tiền</th>
+                                <th>Trạng Thái</th>
+                                <th>Thời Gian</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tx-table-body">
+                            <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Đang tải dữ liệu...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: USER LIST -->
+        <div id="tab-users" class="tab-content" style="display: none;">
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span>👥 Danh Sách Quản Lý Người Dùng Telegram</span>
+                    </div>
+                    <input type="text" class="search-box" id="search-users" placeholder="🔍 Tìm kiếm theo User ID..." onkeyup="filterUsers()">
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Telegram User ID</th>
+                                <th>Cấp Độ Tài Khoản</th>
+                                <th>Hạn Dùng VIP</th>
+                                <th>Tổng Lượt Nâng Gold</th>
+                                <th>Số Đơn Thanh Toán</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user-table-body">
+                            <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Đang tải dữ liệu...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: CTV MANAGEMENT -->
+        <div id="tab-ctv" class="tab-content" style="display: none;">
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span>⭐ Thêm & Quản Lý Cộng Tác Viên (CTV)</span>
+                    </div>
+                </div>
+                
+                <div style="background: #f8fafc; border: 1px solid var(--border-card); padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+                    <div style="font-weight: 700; font-size: 14px; margin-bottom: 10px;">➕ Thêm Telegram ID vào danh sách CTV</div>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+                        <input type="number" id="add-ctv-id" placeholder="Nhập Telegram Chat ID (VD: 6685744035)" style="padding: 10px 14px; border: 1px solid var(--border-card); border-radius: 8px; width: 280px; font-size: 13px;">
+                        <input type="number" id="add-ctv-days" value="29" placeholder="Số ngày (Mặc định 29)" style="padding: 10px 14px; border: 1px solid var(--border-card); border-radius: 8px; width: 160px; font-size: 13px;">
+                        <button onclick="submitAddCtvFromWeb()" class="btn-refresh" style="background: var(--accent-purple); color: #fff; border: none;">⚡ Thêm CTV Ngay</button>
+                    </div>
+                    <div id="add-ctv-status" style="margin-top: 10px; font-size: 13px; font-weight: 600;"></div>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Telegram Chat ID</th>
+                                <th>Trạng Thái</th>
+                                <th>Thời Gian Còn Lại (Đếm Ngược)</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ctv-table-body">
+                            <tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Đang tải dữ liệu CTV...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let globalTransactions = [];
+        let globalUsers = [];
+
+        function checkAuth() {
+            const token = localStorage.getItem("admin_auth");
+            if (token === "admin_session_xuanhau_2024") {
+                document.getElementById('login-overlay').style.display = 'none';
+                document.getElementById('dashboard-main').style.display = 'block';
+                loadDashboardData();
+            } else {
+                document.getElementById('login-overlay').style.display = 'flex';
+                document.getElementById('dashboard-main').style.display = 'none';
+            }
+        }
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            const pass = document.getElementById('login-pass').value.trim();
+            const errDiv = document.getElementById('login-error');
+
+            if (!pass) {
+                errDiv.innerText = "❌ Vui lòng nhập mật khẩu!";
+                return;
+            }
+
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: pass })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    localStorage.setItem("admin_auth", data.token);
+                    checkAuth();
+                } else {
+                    errDiv.innerText = `❌ ${data.error || "Mật khẩu sai!"}`;
+                }
+            } catch (err) {
+                errDiv.innerText = "❌ Lỗi kết nối máy chủ!";
+            }
+        }
+
+        function handleLogout() {
+            localStorage.removeItem("admin_auth");
+            checkAuth();
+        }
+
+        function formatVND(amount) {
+            if (!amount) return "0";
+            return new Intl.NumberFormat('vi-VN').format(amount);
+        }
+
+        async function loadDashboardData() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+
+                if (!data.success) return;
+
+                const stats = data.stats || {};
+
+                // Stat Cards
+                const elRev = document.getElementById('val-total-revenue');
+                if (elRev) elRev.innerText = formatVND(stats.total_revenue || 0);
+
+                const elUsers = document.getElementById('val-total-users');
+                if (elUsers) elUsers.innerText = (stats.total_users || 0) + " Users";
+
+                const elSucc = document.getElementById('val-success-req');
+                if (elSucc) elSucc.innerText = (stats.success_requests || 0).toLocaleString() + " Lượt";
+
+                const elCtv = document.getElementById('val-ctv-count');
+                if (elCtv) elCtv.innerText = ((data.ctvs || []).length) + " CTV";
+
+                const elVip = document.getElementById('val-vip-count');
+                if (elVip) elVip.innerText = (stats.active_vips || 0) + " VIP Active";
+
+                const totalOrders = (stats.month_orders_count || 0) + (stats.single_orders_count || 0) + (stats.vip_orders_count || 0);
+                const elAppr = document.getElementById('val-approved-count');
+                if (elAppr) elAppr.innerText = totalOrders + " Đơn";
+
+                const elRate = document.getElementById('val-success-rate');
+                if (elRate) elRate.innerText = "100% Thành Công";
+
+                // Revenue Details
+                const elSingleCount = document.getElementById('rev-single-count');
+                if (elSingleCount) elSingleCount.innerText = (stats.single_orders_count || 0) + " đơn";
+
+                const elSingleVal = document.getElementById('rev-single-val');
+                if (elSingleVal) elSingleVal.innerText = formatVND(stats.single_revenue || 0);
+
+                // Render Tables safely
+                globalTransactions = data.transactions || [];
+                renderTransactions(globalTransactions);
+
+                globalUsers = data.users || [];
+                renderUsers(globalUsers);
+
+                renderCtvs(data.ctvs || []);
+                renderTopUsers(data.top_users || []);
+
+            } catch (err) {
+                console.error("Error loading dashboard data:", err);
+            }
+        }
+
+        function renderTopUsers(list) {
+            const tbody = document.getElementById('top-users-table-body');
+            if (!tbody) return;
+            if (!list || list.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Chưa có dữ liệu lượt nâng</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = list.map((u, index) => {
+                let rankBadge = `<span style="font-weight: 800; font-family: 'Space Grotesk', monospace;">#${index + 1}</span>`;
+                if (index === 0) rankBadge = `<span style="font-size: 16px;">🥇 <b>#1</b></span>`;
+                if (index === 1) rankBadge = `<span style="font-size: 16px;">🥈 <b>#2</b></span>`;
+                if (index === 2) rankBadge = `<span style="font-size: 16px;">🥉 <b>#3</b></span>`;
+
+                let roleBadge = `<span class="status-badge status-approved">${u.role}</span>`;
+                if (u.role.includes("Admin")) roleBadge = `<span class="status-badge" style="background: rgba(245,158,11,0.15); color: var(--accent-gold); border: 1px solid rgba(245,158,11,0.4);">${u.role}</span>`;
+                if (u.role.includes("Cộng Tác")) roleBadge = `<span class="status-badge" style="background: rgba(124,58,237,0.15); color: var(--accent-purple); border: 1px solid rgba(124,58,237,0.4);">${u.role}</span>`;
+
+                return `
+                    <tr>
+                        <td>${rankBadge}</td>
+                        <td><code>${u.user_id}</code></td>
+                        <td>${roleBadge}</td>
+                        <td><strong style="color: var(--accent-gold); font-size: 15px; font-family: 'Space Grotesk', monospace;">⚡ ${u.count.toLocaleString()} Lượt</strong></td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderCtvs(list) {
+            const tbody = document.getElementById('ctv-table-body');
+            if (!tbody) return;
+            if (!list || list.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Chưa có Cộng Tác Viên (CTV) nào</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = list.map(c => {
+                return `
+                    <tr>
+                        <td><code>${c.user_id}</code></td>
+                        <td><span class="status-badge status-approved">⭐ CỘNG TÁC VIÊN</span></td>
+                        <td><strong style="color: var(--accent-purple); font-family: 'Space Grotesk', monospace;">⏳ ${c.remaining_str}</strong></td>
+                        <td>
+                            <button onclick="submitRemoveCtvFromWeb(${c.user_id})" style="background: rgba(244,63,94,0.1); border: 1px solid rgba(244,63,94,0.3); color: var(--accent-red); padding: 5px 12px; border-radius: 6px; font-weight: 700; cursor: pointer;">❌ Xoá CTV</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        async function submitAddCtvFromWeb() {
+            const idInput = document.getElementById('add-ctv-id');
+            const daysInput = document.getElementById('add-ctv-days');
+            const statusDiv = document.getElementById('add-ctv-status');
+
+            const userId = idInput.value.trim();
+            const days = daysInput.value.trim() || 29;
+
+            if (!userId) {
+                statusDiv.style.color = 'var(--accent-red)';
+                statusDiv.innerText = '❌ Vui lòng nhập Telegram Chat ID!';
+                return;
+            }
+
+            statusDiv.style.color = 'var(--accent-gold)';
+            statusDiv.innerText = '⏳ Đang thêm CTV & ghi file .env...';
+
+            try {
+                const res = await fetch('/api/addctv', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ user_id: parseInt(userId), days: parseInt(days) })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    statusDiv.style.color = 'var(--accent-green)';
+                    statusDiv.innerText = `✅ Đã thêm CTV ${userId} cho ${days} ngày!`;
+                    idInput.value = '';
+                    loadDashboardData();
+                } else {
+                    statusDiv.style.color = 'var(--accent-red)';
+                    statusDiv.innerText = `❌ Lỗi: ${data.error || 'Thêm CTV thất bại'}`;
+                }
+            } catch (err) {
+                statusDiv.style.color = 'var(--accent-red)';
+                statusDiv.innerText = '❌ Lỗi kết nối máy chủ!';
+            }
+        }
+
+        async function submitRemoveCtvFromWeb(userId) {
+            if (!confirm(`Bạn có chắc chắn muốn xoá CTV ${userId} không?`)) return;
+
+            try {
+                const res = await fetch('/api/removectv', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ user_id: parseInt(userId) })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    loadDashboardData();
+                } else {
+                    alert('Lỗi: ' + (data.error || 'Xoá CTV thất bại'));
+                }
+            } catch (err) {
+                alert('Lỗi kết nối máy chủ!');
+            }
+        }
+
+        function renderTransactions(list) {
+            const tbody = document.getElementById('tx-table-body');
+            if (list.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Chưa có đơn hàng nào</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = list.map(tx => {
+                let statusBadge = '<span class="status-badge status-pending">ĐANG CHỜ</span>';
+                if (tx.status === 'APPROVED') statusBadge = '<span class="status-badge status-approved">THÀNH CÔNG</span>';
+                if (tx.status === 'CANCELLED') statusBadge = '<span class="status-badge status-failed">ĐÃ HỦY</span>';
+
+                return `
+                    <tr>
+                        <td><code>${tx.order_id}</code></td>
+                        <td><code>${tx.user_id}</code></td>
+                        <td><strong style="color: var(--text-main);">${tx.username}</strong></td>
+                        <td>${tx.package}</td>
+                        <td><strong style="color: var(--accent-green); font-family: 'Space Grotesk', monospace;">${formatVND(tx.amount)}</strong></td>
+                        <td>${statusBadge}</td>
+                        <td style="color: var(--text-muted); font-size: 12px;">${tx.timestamp || '-'}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderUsers(list) {
+            const tbody = document.getElementById('user-table-body');
+            if (list.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted);">Chưa có người dùng nào</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = list.map(u => {
+                const vipTag = u.is_vip ? '<span class="tag-vip">👑 VIP MEMBER 1 NĂM</span>' : '<span class="tag-free">MEMBER THƯỜNG</span>';
+                return `
+                    <tr>
+                        <td><code>${u.user_id}</code></td>
+                        <td>${vipTag}</td>
+                        <td><strong style="color: var(--accent-gold); font-family: 'Space Grotesk', monospace;">${u.vip_expires}</strong></td>
+                        <td><strong style="color: var(--text-main);">${u.total_requests} lượt</strong></td>
+                        <td><strong style="color: var(--accent-green);">${u.approved_payments} đơn</strong></td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function filterTransactions() {
+            const q = document.getElementById('search-tx').value.toLowerCase();
+            const filtered = globalTransactions.filter(tx => 
+                String(tx.order_id).toLowerCase().includes(q) ||
+                String(tx.user_id).toLowerCase().includes(q) ||
+                String(tx.username).toLowerCase().includes(q)
+            );
+            renderTransactions(filtered);
+        }
+
+        function filterUsers() {
+            const q = document.getElementById('search-users').value.toLowerCase();
+            const filtered = globalUsers.filter(u => String(u.user_id).toLowerCase().includes(q));
+            renderUsers(filtered);
+        }
+
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).style.display = 'block';
+            btn.classList.add('active');
+        }
+
+        async function submitAddVip() {
+            const userIdInput = document.getElementById('add-vip-id');
+            const daysInput = document.getElementById('add-vip-days');
+            const statusSpan = document.getElementById('add-vip-status');
+
+            const userId = userIdInput.value.trim();
+            const days = daysInput.value.trim() || 365;
+
+            if (!userId) {
+                statusSpan.style.color = 'var(--accent-red)';
+                statusSpan.innerText = '❌ Vui lòng nhập Telegram User ID!';
+                return;
+            }
+
+            statusSpan.style.color = 'var(--accent-gold)';
+            statusSpan.innerText = '⏳ Đang kích hoạt...';
+
+            try {
+                const res = await fetch('/api/addvip', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ user_id: parseInt(userId), days: parseInt(days) })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    statusSpan.style.color = 'var(--accent-green)';
+                    statusSpan.innerText = `✅ Đã kích hoạt VIP (${days} ngày) đến ${data.expires_at}`;
+                    userIdInput.value = '';
+                    loadDashboardData();
+                } else {
+                    statusSpan.style.color = 'var(--accent-red)';
+                    statusSpan.innerText = `❌ Lỗi: ${data.error || 'Thất bại'}`;
+                }
+            } catch (err) {
+                statusSpan.style.color = 'var(--accent-red)';
+                statusSpan.innerText = `❌ Lỗi kết nối server`;
+            }
+        }
+
+        async function submitSetPrice() {
+            const singleInput = document.getElementById('cfg-price-single');
+            const statusSpan = document.getElementById('set-price-status');
+
+            const pSingle = parseInt(singleInput.value) || 79000;
+
+            statusSpan.style.color = 'var(--accent-gold)';
+            statusSpan.innerText = '⏳ Đang lưu giá gói 1 Năm...';
+
+            try {
+                const res = await fetch('/api/setprice', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ price_single: pSingle, price_vip: pSingle })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    statusSpan.style.color = 'var(--accent-green)';
+                    statusSpan.innerText = `✅ Đã lưu giá mới cho Gói VIP 1 Năm: ${pSingle.toLocaleString()} VNĐ`;
+                    loadDashboardData();
+                } else {
+                    statusSpan.style.color = 'var(--accent-red)';
+                    statusSpan.innerText = `❌ Lỗi: ${data.error || 'Thất bại'}`;
+                }
+            } catch (err) {
+                statusSpan.style.color = 'var(--accent-red)';
+                statusSpan.innerText = `❌ Lỗi kết nối server`;
+            }
+        }
+
+        // Check authentication on load
+        checkAuth();
+        setInterval(loadDashboardData, 15000);
+    </script>
+</body>
+</html>

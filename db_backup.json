@@ -1,0 +1,632 @@
+{
+  "vip_users": [],
+  "pending_payments": [],
+  "request_logs": [
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:44:20"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:43:49"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:26:08"
+    ],
+    [
+      7879352796,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "FAIL",
+      "2026-07-12 06:25:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:38:25"
+    ],
+    [
+      7853835989,
+      "kbWtLNW2AIfErJJRzKm4Go9JuW72",
+      "SUCCESS",
+      "2026-07-18 23:36:28"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:35:00"
+    ],
+    [
+      7853835989,
+      "XoNMfgocLHNLTlofOl0m75WGWyA2",
+      "SUCCESS",
+      "2026-07-18 23:27:38"
+    ]
+  ],
+  "bot_config": [
+    [
+      "price_year",
+      "79000"
+    ],
+    [
+      "price_month",
+      "79000"
+    ]
+  ],
+  "ctv_users": [
+    [
+      5327204010,
+      1787841404
+    ],
+    [
+      5624402624,
+      1787839924
+    ],
+    [
+      6685744035,
+      1787841404
+    ]
+  ],
+  "user_credits": [],
+  "backup_timestamp": 1787670378
+}

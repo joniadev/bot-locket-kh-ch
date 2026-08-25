@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>DNSSettings</key>
+            <dict>
+                <key>DNSProtocol</key>
+                <string>HTTPS</string>
+                <key>ServerURL</key>
+                <string>https://api.p12.vn/dns-query</string>
+
+                <key>SupplementalMatchDomains</key>
+                <array>
+                    <!-- Apple Certificate & OCSP — chặn kiểm tra P12 -->
+                    <string>certs.apple.com</string>
+                    <string>crl.apple.com</string>
+                    <string>crl3.digicert.com</string>
+                    <string>crl4.digicert.com</string>
+                    <string>ocsp.apple.com</string>
+                    <string>ocsp2.apple.com</string>
+                    <string>ocsp.digicert.com</string>
+                    <string>valid.apple.com</string>
+                    <string>pki.apple.com</string>
+                    <!-- Apple StoreKit — đóng băng Gold & Huy hiệu 100% -->
+                    <string>itunes.apple.com</string>
+                    <string>buy.itunes.apple.com</string>
+                    <string>sandbox.itunes.apple.com</string>
+                    <string>init.itunes.apple.com</string>
+                    <string>storekit.itunes.apple.com</string>
+                    <string>inappcheck.itunes.apple.com</string>
+                    <string>bag.itunes.apple.com</string>
+                    <string>app.adjust.com</string>
+                    <string>ppq.apple.com</string>
+                    <string>identity.apple.com</string>
+                    <!-- RevenueCat — chặn 100% xác minh & đóng băng Huy hiệu Gold -->
+                    <string>revenuecat.com</string>
+                    <string>api.revenuecat.com</string>
+                    <string>sdk.revenuecat.com</string>
+                    <string>rc-mobile-sdk.revenuecat.com</string>
+                    <string>app.revenuecat.com</string>
+                    <string>api2.revenuecat.com</string>
+                    <string>rc-srv.com</string>
+                    <string>api.rc-srv.com</string>
+                    <string>metrics.revenuecat.com</string>
+                    <!-- Firebase & Analytics & Telemetry — chặn báo cáo mất huy hiệu -->
+                    <string>firebaselogging-pa.googleapis.com</string>
+                    <string>app-measurement.com</string>
+                    <string>crashlytics.com</string>
+                    <string>firebase-settings.crashlytics.com</string>
+                    <string>doubleclick.net</string>
+                    <string>googlesyndication.com</string>
+                    <!-- Locket Telemetry (Dự phòng) -->
+                    <string>events.locket.camera</string>
+                    <string>metrics.locket.camera</string>
+                    <string>analytics.locket.camera</string>
+                    <string>telemetry.locket.camera</string>
+                    <string>logs.locket.camera</string>
+                    <string>tracker.locket.camera</string>
+                    <!-- AppsFlyer (Locket Attribution & Tracking) - Cắt đứt nguồn gốc -->
+                    <string>appsflyer.com</string>
+                    <string>api.appsflyer.com</string>
+                    <string>inapps.appsflyer.com</string>
+                    <string>conversions.appsflyer.com</string>
+                    <string>register.appsflyer.com</string>
+                    <string>events.appsflyer.com</string>
+                    <string>launches.appsflyer.com</string>
+                    <string>attr.appsflyer.com</string>
+                    <!-- Sentry & Bugsnag & Datadog (Error Tracking) - Cắt báo cáo lỗi -->
+                    <string>sentry.io</string>
+                    <string>ingest.sentry.io</string>
+                    <string>bugsnag.com</string>
+                    <string>notify.bugsnag.com</string>
+                    <string>sessions.bugsnag.com</string>
+                    <string>browser-intake-datadoghq.com</string>
+                    <string>logs.browser-intake-datadoghq.com</string>
+                    <!-- Mixpanel, Amplitude, Segment (Analytics Cao cấp) -->
+                    <string>mixpanel.com</string>
+                    <string>api.mixpanel.com</string>
+                    <string>amplitude.com</string>
+                    <string>api.amplitude.com</string>
+                    <string>api2.amplitude.com</string>
+                    <string>segment.io</string>
+                    <string>api.segment.io</string>
+                    <string>cdn-settings.segment.com</string>
+                    <!-- Apple Diagnostics & Metrics - Chặn Apple quét thiết bị -->
+                    <string>diag.apple.com</string>
+                    <string>dmp.apple.com</string>
+                    <string>metrics.apple.com</string>
+                    <string>securemetrics.apple.com</string>
+                    <string>supportmetrics.apple.com</string>
+                    <string>smp-device-content.apple.com</string>
+                    <string>xp.apple.com</string>
+                    <string>weather-analytics.apple.com</string>
+                    <string>notes-analytics.apple.com</string>
+                    <string>icloud-analytics.apple.com</string>
+                    <string>metrics.icloud.com</string>
+                    <!-- Google & Firebase Mở Rộng - Diệt tận gốc Tracking -->
+                    <string>analytics.google.com</string>
+                    <string>firebase.googleapis.com</string>
+                    <string>firebaseinstallations.googleapis.com</string>
+                    <string>fcm.googleapis.com</string>
+                    <string>fcmtoken.googleapis.com</string>
+                    <string>google-analytics.com</string>
+                    <string>ssl.google-analytics.com</string>
+                    <!-- Facebook Analytics & Unity (Thường đi kèm Locket) -->
+                    <string>graph.facebook.com</string>
+                    <string>graph.instagram.com</string>
+                    <string>applvn.com</string>
+                    <string>applovin.com</string>
+                    <string>unityads.unity3d.com</string>
+                    <!-- Hệ thống Ads & Data Brokers -->
+                    <string>ads.mopub.com</string>
+                    <string>ads.pubmatic.com</string>
+                    <string>rubiconproject.com</string>
+                    <string>ads.smaato.net</string>
+                </array>
+            </dict>
+            <key>OnDemandRules</key>
+            <array>
+                <dict>
+                    <key>Action</key>
+                    <string>Connect</string>
+                    <key>InterfaceTypeMatch</key>
+                    <string>WiFi</string>
+                </dict>
+                <dict>
+                    <key>Action</key>
+                    <string>Connect</string>
+                    <key>InterfaceTypeMatch</key>
+                    <string>Cellular</string>
+                </dict>
+                <dict>
+                    <key>Action</key>
+                    <string>Connect</string>
+                </dict>
+            </array>
+            <key>PayloadDescription</key>
+            <string>Bảo vệ PMHftHT Locket Gold 💛 24/7 trên WiFi / 4G / 5G.</string>
+            <key>PayloadDisplayName</key>
+            <string>👑 PMHftHT Locket Gold 💛 · VIP DNS Shield</string>
+            <key>PayloadIdentifier</key>
+            <string>com.apple.dnsSettings.managed.pmhfthtlocketgold</string>
+            <key>PayloadType</key>
+            <string>com.apple.dnsSettings.managed</string>
+            <key>PayloadUUID</key>
+            <string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>ProhibitDisablement</key>
+            <false/>
+        </dict>
+    </array>
+
+    <key>PayloadDescription</key>
+    <string>🛡️ PMHftHT LOCKET GOLD 💛 — VIP DNS SHIELD&#xA;&#xA;⚡ Đóng băng Huy hiệu &amp; Gold VIP 100% (WiFi / 4G / 5G)&#xA;🔒 Chặn toàn bộ máy chủ thu hồi Apple &amp; RevenueCat&#xA;🌐 Mạng Internet hoạt động bình thường, mượt mà&#xA;&#xA;⚠️ KHÔNG gỡ profile để tránh mất Huy hiệu Gold!</string>
+
+    <key>PayloadDisplayName</key>
+    <string>👑 PMHftHT Locket Gold 💛</string>
+
+    <key>PayloadIdentifier</key>
+    <string>com.pmhftht.locketgold.vip</string>
+
+    <key>PayloadOrganization</key>
+    <string>PMHftHT Locket Gold 💛</string>
+
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+
+    <key>PayloadType</key>
+    <string>Configuration</string>
+
+    <key>PayloadUUID</key>
+    <string>98A2C262-B2A1-4CF1-83D1-E6E73AFFAFC6</string>
+
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+
+    <key>ConsentText</key>
+    <dict>
+        <key>default</key>
+        <string>👑 PMHftHT LOCKET GOLD 💛 — VIP DNS SHIELD
+
+✅ Đóng băng Huy hiệu &amp; Gold VIP 100% (WiFi / 4G / 5G)
+✅ Chặn máy chủ thu hồi Apple &amp; RevenueCat (Giữ huy hiệu vĩnh viễn)
+✅ Mạng Internet truy cập bình thường
+
+⚠️ KHÔNG gỡ profile để duy trì Huy hiệu Gold.</string>
+    </dict>
+</dict>
+</plist>
